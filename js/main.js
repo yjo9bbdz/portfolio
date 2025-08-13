@@ -54,6 +54,8 @@ const Works = {
     imgType: 'jpg',
   },
 
+  offcanvasOpenedByPush: false,
+
   init() {
     this.buildNav()
     this.buildSecSwiper().then(() => this.initSecSwiper())
@@ -125,6 +127,7 @@ const Works = {
           )
         },
         slideChangeTransitionStart: function () {
+          $('.worksSecSwiper').removeClass('scrollAni animated')
           $('.worksSecSwiper .btn-offcanvas').removeClass('active')
         },
         slideChange: function () {
@@ -194,6 +197,7 @@ const Works = {
     let scrollbarW = window.innerWidth - document.documentElement.clientWidth
     let id = $(e.currentTarget).attr('href')
     history.pushState({ offcanvasOpen: true }, '', '')
+    this.offcanvasOpenedByPush = true
     $('body').css('padding-right', scrollbarW)
     $('body').addClass('overflow-hidden')
     $(id).addClass('show')
@@ -211,13 +215,20 @@ const Works = {
     }, 100)
   },
 
-  closeOffcanvas() {
+  closeOffcanvas(e) {
     $('.offcanvas').removeClass('show')
     $('.offcanvas-backdrop').removeClass('show')
     setTimeout(function () {
       $('body').removeClass('overflow-hidden')
       $('body').css('padding-right', '')
     }, 300)
+
+    if (this.offcanvasOpenedByPush) {
+      this.offcanvasOpenedByPush = false
+      if (!e || e.type !== 'popstate') {
+        history.back()
+      }
+    }
   },
 }
 
