@@ -365,12 +365,8 @@ h2.fs-3 {
         transition: width 0.15s ease-in-out;
       }
 
-      &:hover {
-        color: rgb(var(--#{$prefix}white-rgb));
-
-        hr {
-          animation: scroll-line-h 1s infinite;
-        }
+      &:hover hr {
+        animation: scroll-line-h 1s infinite;
       }
     }
   }
@@ -407,13 +403,9 @@ h2.fs-3 {
       transition: transform 0.35s var(--wipe-timing-function);
     }
 
-    &:hover {
-      opacity: 1;
-
-      &::after {
-        transform: scaleX(1);
-        transform-origin: right;
-      }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: right;
     }
 
     &.show {

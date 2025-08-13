@@ -631,31 +631,31 @@ $utilities: map-merge(
         center: center,
       ),
     ),
-    'text-decoration': (
-      property: text-decoration,
-      values: none underline line-through,
-    ),
-    'text-transform': (
-      property: text-transform,
-      class: text,
-      values: lowercase uppercase capitalize,
-    ),
-    'white-space': (
-      property: white-space,
-      class: text,
-      values: (
-        wrap: normal,
-        nowrap: nowrap,
-      ),
-    ),
-    'word-wrap': (
-      property: word-wrap word-break,
-      class: text,
-      values: (
-        break: break-word,
-      ),
-      rtl: false,
-    ),
+    // 'text-decoration': (
+    //   property: text-decoration,
+    //   values: none underline line-through,
+    // ),
+    // 'text-transform': (
+    //   property: text-transform,
+    //   class: text,
+    //   values: lowercase uppercase capitalize,
+    // ),
+    // 'white-space': (
+    //   property: white-space,
+    //   class: text,
+    //   values: (
+    //     wrap: normal,
+    //     nowrap: nowrap,
+    //   ),
+    // ),
+    // 'word-wrap': (
+    //   property: word-wrap word-break,
+    //   class: text,
+    //   values: (
+    //     break: break-word,
+    //   ),
+    //   rtl: false,
+    // ),
     // scss-docs-end utils-text
     // scss-docs-start utils-color
     'color':
@@ -700,19 +700,20 @@ $utilities: map-merge(
       ),
     // scss-docs-end utils-color
     // scss-docs-start utils-links
-    // 'link-opacity':
-    //   (
-    //     css-var: true,
-    //     class: link-opacity,
-    //     state: hover,
-    //     values: (
-    //       10: 0.1,
-    //       25: 0.25,
-    //       50: 0.5,
-    //       75: 0.75,
-    //       100: 1,
-    //     ),
-    //   ),
+    'link-opacity':
+      (
+        css-var: true,
+        class: link-opacity,
+        state: hover,
+        values: (
+          // 10: 0.1,
+          // 25: 0.25,
+          // 50: 0.5,
+          60: 0.6,
+          // 75: 0.75,
+          // 100: 1,,,,
+        ),
+      ),
     // 'link-offset': (
     //   property: text-underline-offset,
     //   class: link-offset,

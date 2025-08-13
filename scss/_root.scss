@@ -87,7 +87,6 @@
 
   --#{$prefix}link-hover-color: #{$link-hover-color};
   --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
-  --#{$prefix}link-hover-opacity: #{$link-hover-opacity};
 
   @if $link-hover-decoration != null {
     --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
