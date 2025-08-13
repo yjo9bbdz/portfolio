@@ -331,6 +331,21 @@ svg {
   vertical-align: middle;
 }
 
+.svg {
+  &-currentColor {
+    fill: currentColor;
+  }
+
+  &-stroke {
+    fill: none;
+    stroke: var(--bs-gray-200);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+}
+
 // Tables
 //
 // Prevent double borders

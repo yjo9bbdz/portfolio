@@ -273,6 +273,13 @@
   .swiper-slide-prev {
     opacity: 0 !important;
   }
+
+  .works-link {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
 }
 
 .worksNavSwiper {

@@ -1,7 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <style>
-    .svg-style-mail{fill:none;stroke:var(--bs-gray-200);stroke-width:25;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}
-  </style>
-  <path d="M43.5 105h425v302h-425z" class="svg-style-mail"/>
-  <path d="m417 155.6-161 140-161-140" class="svg-style-mail"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+    <path d="M3.4 8.2h33.2v23.59H3.4z"/>
+    <path d="M32.58 12.16 20 23.1 7.42 12.16"/>
 </svg>

@@ -50,6 +50,17 @@ const Skills = {
 const Works = {
   data: {
     num: 20,
+    link: [
+      { num: 3, url: 'https://www.changliu.com.tw/' },
+      { num: 6, url: 'https://www.yuantoufood.com/' },
+      { num: 10, url: 'https://www.motellin.com/' },
+      { num: 12, url: 'https://www.ubl.com.tw/' },
+      { num: 13, url: 'https://www.lihkang.com.tw/' },
+      { num: 14, url: 'https://bitaust.com/' },
+      { num: 15, url: 'https://hsinjung.com.tw/' },
+      { num: 17, url: 'https://www.mutunepaltrek.com/' },
+      { num: 20, url: 'https://www.pinyibio.com.tw/' },
+    ],
     imgPath: 'images/works/',
     imgType: 'jpg',
   },
@@ -144,7 +155,9 @@ const Works = {
   },
 
   initForSwiper() {
-    this.forSwiper = new Swiper('.worksForSwiper', {
+    let $this = this
+
+    $this.forSwiper = new Swiper('.worksForSwiper', {
       autoHeight: true,
       effect: 'fade',
       lazy: true,
@@ -152,11 +165,12 @@ const Works = {
       virtual: {
         slides: (() => {
           let slides = []
-          for (let i = 1; i <= this.data.num; i++) {
+          for (let i = 1; i <= $this.data.num; i++) {
             let html = $('#worksForItem').children().clone()
-            let srcWebp = this.data.imgPath + i + '.webp'
-            let srcJpg = this.data.imgPath + i + '.' + this.data.imgType
+            let srcWebp = $this.data.imgPath + i + '.webp'
+            let srcJpg = $this.data.imgPath + i + '.' + $this.data.imgType
             imgSrc(html, srcWebp, srcJpg)
+
             slides.push(html.prop('outerHTML'))
           }
           return slides
@@ -165,10 +179,19 @@ const Works = {
       on: {
         activeIndexChange: function () {
           let activeWork = parseInt(this.activeIndex) + 1
+          let hasLink = $this.data.link.find(
+            (linkItem) => linkItem.num === activeWork
+          )
 
           $('.worksForSwiper').parents('.offcanvas-body').scrollTop(0)
           $('.swiper-nav').removeClass('active')
           $('.swiper-nav[data-works="' + activeWork + '"]').addClass('active')
+
+          if (hasLink) {
+            $('.works-linkto').attr('href', hasLink.url).addClass('show')
+          } else {
+            $('.works-linkto').removeClass('show')
+          }
         },
       },
     })
@@ -229,6 +252,72 @@ const Works = {
         history.back()
       }
     }
+  },
+}
+
+const Loader = {
+  isVisible: true,
+  hideTime: 400,
+  hideTimeout: null,
+  onLoadCompleteCallbacks: [],
+
+  hideLoader: function () {
+    $('.loader').addClass('is-hidden')
+
+    setTimeout(() => {
+      $('.loader').hide()
+    }, this.hideTime)
+
+    this.onLoadCompleteCallbacks.forEach((callback) => {
+      if (typeof callback === 'function') {
+        callback()
+      }
+    })
+  },
+
+  show: function () {
+    $('.loader').removeClass('is-hidden')
+    this.isVisible = true
+  },
+
+  hide: function (delay) {
+    if (!this.isVisible) return
+
+    const hideDelay = delay || 0
+    const self = this
+
+    if (this.hideTimeout) {
+      clearTimeout(this.hideTimeout)
+    }
+
+    this.hideTimeout = setTimeout(function () {
+      self.hideLoader()
+      self.isVisible = false
+    }, hideDelay)
+  },
+
+  getVisibleStatus: function () {
+    return this.isVisible
+  },
+
+  onLoadComplete: function (callback) {
+    if (typeof callback === 'function') {
+      this.onLoadCompleteCallbacks.push(callback)
+    }
+  },
+
+  init: function () {
+    const self = this
+
+    const hideLoader = function () {
+      self.hide(this.hideTime)
+    }
+
+    $(window).on('load', function () {
+      setTimeout(hideLoader, 500)
+    })
+
+    setTimeout(hideLoader, 3000)
   },
 }
 
@@ -362,7 +451,10 @@ function imgSrc(item, webp, type, alt) {
 $(function () {
   Skills.init()
   Works.init()
-  ScrollAni.init()
+  Loader.onLoadComplete(function () {
+    ScrollAni.init()
+  })
+  Loader.init()
   Parallax.init()
   Header.init()
 })

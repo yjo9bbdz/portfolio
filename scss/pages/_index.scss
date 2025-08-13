@@ -18,6 +18,31 @@ h2.fs-3 {
   }
 }
 
+// Loader
+.loader {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  letter-spacing: 0.75em;
+  color: rgba(var(--#{$prefix}light-rgb), 0.6);
+  background: url(../images/all/bg-texture.webp) repeat var(--#{$prefix}body-bg);
+  @include padding-left(4rem);
+  @include padding-bottom(4rem);
+  transition: transform 0.375s var(--wipe-timing-function);
+
+  &.is-hidden {
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  svg {
+    fill: currentColor;
+    animation: loading 2.5s linear infinite;
+  }
+}
+
 // Header
 .header {
   --header-contact-over-height: #{$header-contact-over-height};
@@ -36,11 +61,15 @@ h2.fs-3 {
     }
 
     &.animated {
-      animation: wipe-in 0.5s var(--wipe-timing-function) 0.5s forwards;
+      animation: wipe-in 0.75s var(--wipe-timing-function) 0.25s forwards;
 
       .header-left .name-wrapper::after,
       .header-right-bg {
-        animation: wipe-in 0.625s var(--wipe-timing-function) 0.75s forwards;
+        animation: wipe-in 0.9s var(--wipe-timing-function) 0.5s forwards;
+      }
+
+      .header-right .border-end {
+        animation: scroll-line-v 2.5s 1.25s infinite;
       }
     }
 
@@ -102,7 +131,6 @@ h2.fs-3 {
       }
 
       svg {
-        fill: var(--#{$prefix}dark);
         transform: rotate(-15deg);
       }
     }
@@ -192,7 +220,6 @@ h2.fs-3 {
     .border-end {
       transform-origin: top;
       transform: scaleY(0);
-      animation: scroll-line-v 2.5s 1.75s infinite;
     }
   }
 
@@ -347,6 +374,53 @@ h2.fs-3 {
       }
     }
   }
+
+  &-linkto {
+    bottom: -2px;
+    right: -2px;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.25s var(--wipe-timing-function) 0.25s;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    &::before {
+      background-color: var(--#{$prefix}dark);
+    }
+
+    &::after {
+      background-color: var(--#{$prefix}primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s var(--wipe-timing-function);
+    }
+
+    &:hover {
+      opacity: 1;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: right;
+      }
+    }
+
+    &.show {
+      transform: translateX(0);
+      pointer-events: initial;
+    }
+  }
 }
 
 // About Section
@@ -399,21 +473,13 @@ h2.fs-3 {
   }
 
   .icon-quote {
-    fill: var(--#{$prefix}dark);
-    margin-bottom: 4rem;
-
     @include media-breakpoint-up(lg) {
       width: 17rem;
+      margin-bottom: 6rem;
     }
     @include media-breakpoint-down(lg) {
       width: rfs-fluid-value(20rem);
+      @include margin-bottom(8rem);
     }
-  }
-}
-
-// Footer
-.footer {
-  .scrollToTop path {
-    fill: var(--#{$prefix}light);
   }
 }

@@ -120,3 +120,17 @@
     transform: scaleX(1);
   }
 }
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
