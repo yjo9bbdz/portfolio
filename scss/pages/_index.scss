@@ -20,6 +20,7 @@ h2.fs-3 {
 
 // Header
 .header {
+  --header-contact-over-height: #{$header-contact-over-height};
   padding-top: calc((100vh - var(--header-height)) / 2);
 
   &-wrapper {
@@ -412,15 +413,7 @@ h2.fs-3 {
 
 // Footer
 .footer {
-  .scrollToTop {
-    transition: opacity 0.25s ease-in-out;
-
-    &:hover {
-      opacity: 0.6;
-    }
-
-    path {
-      fill: var(--#{$prefix}light);
-    }
+  .scrollToTop path {
+    fill: var(--#{$prefix}light);
   }
 }

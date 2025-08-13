@@ -80,16 +80,18 @@
 
   // --#{$prefix}heading-color: #{$headings-color};
 
-  // --#{$prefix}link-color: #{$link-color};
-  // --#{$prefix}link-color-rgb: #{to-rgb($link-color)};
-  // --#{$prefix}link-decoration: #{$link-decoration};
+  --#{$prefix}link-color: #{$link-color};
+  --#{$prefix}link-color-rgb: #{to-rgb($link-color)};
+  --#{$prefix}link-decoration: #{$link-decoration};
+  --#{$prefix}link-transition: #{$link-transition};
 
-  // --#{$prefix}link-hover-color: #{$link-hover-color};
-  // --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
+  --#{$prefix}link-hover-color: #{$link-hover-color};
+  --#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
+  --#{$prefix}link-hover-opacity: #{$link-hover-opacity};
 
-  // @if $link-hover-decoration != null {
-  //   --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
-  // }
+  @if $link-hover-decoration != null {
+    --#{$prefix}link-hover-decoration: #{$link-hover-decoration};
+  }
 
   // --#{$prefix}code-color: #{$code-color};
   // --#{$prefix}highlight-color: #{$mark-color};
@@ -130,7 +132,6 @@
   // // scss-docs-end root-form-validation-variables
 
   //Custom
-  --header-contact-over-height: #{$header-contact-over-height};
   --wipe-timing-function: #{$wipe-timing-function};
 }
 

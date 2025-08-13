@@ -328,11 +328,11 @@ const Header = {
     let windowRatioW = windowW * 0.75
     let headerRealH = $('.header-wrapper').outerHeight()
     let headerVisitH
-    let headerPadding = $(':root')
+    let headerPadding = $('.header')
       .css('--header-contact-over-height')
       .replace('rem', '')
 
-    $(':root').css('--header-height', headerRealH + 'px')
+    $('.header').css('--header-height', headerRealH + 'px')
 
     if (windowW >= 992 && windowH <= windowRatioW) {
       headerPadding = headerPadding + 'rem'

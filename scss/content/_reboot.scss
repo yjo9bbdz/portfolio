@@ -239,10 +239,12 @@ a {
     var(--#{$prefix}link-opacity, 1)
   );
   text-decoration: $link-decoration;
+  transition: var(--#{$prefix}link-transition);
 
   &:hover {
     --#{$prefix}link-color-rgb: var(--#{$prefix}link-hover-color-rgb);
     text-decoration: $link-hover-decoration;
+    opacity: var(--#{$prefix}link-hover-opacity);
   }
 }
 
