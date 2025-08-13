@@ -1,0 +1,426 @@
+// Utilities
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2.5px var(--#{$prefix}primary);
+
+  @include media-breakpoint-down(lg) {
+    -webkit-text-stroke-width: 2px;
+  }
+}
+
+// Layout
+h2.fs-3 {
+  @include media-breakpoint-up(lg) {
+    width: 15rem;
+  }
+  @include media-breakpoint-only(md) {
+    width: 12rem;
+  }
+}
+
+// Header
+.header {
+  padding-top: calc((100vh - var(--header-height)) / 2);
+
+  &-wrapper {
+    position: relative;
+    z-index: 1;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 150%, 0% 150%);
+
+    @include media-breakpoint-up(lg) {
+      padding-top: $header-padding-top;
+    }
+    @include media-breakpoint-down(lg) {
+      @include padding-top(2rem);
+    }
+
+    &.animated {
+      animation: wipe-in 0.5s var(--wipe-timing-function) 0.5s forwards;
+
+      .header-left .name-wrapper::after,
+      .header-right-bg {
+        animation: wipe-in 0.625s var(--wipe-timing-function) 0.75s forwards;
+      }
+    }
+
+    &-bg {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: center / cover no-repeat $black
+        url('../images/index/bg-banner.webp');
+    }
+  }
+
+  &-left {
+    @include media-breakpoint-up(xl) {
+      padding-left: 4rem;
+    }
+    @include media-breakpoint-down(xl) {
+      @include padding-left(3rem);
+    }
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    h1 {
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 0;
+        transform: skewX(-10deg);
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: calc(100% + 1rem);
+          height: 2rem;
+          bottom: 0.15rem;
+          left: -0.25rem;
+          z-index: -1;
+          background-color: var(--#{$prefix}gray-900);
+          transform: skewX(10deg);
+        }
+      }
+    }
+
+    .logo {
+      height: auto;
+
+      @include media-breakpoint-up(xl) {
+        width: 18rem;
+      }
+      @include media-breakpoint-only(lg) {
+        width: 14rem;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 10rem;
+      }
+
+      svg {
+        fill: var(--#{$prefix}dark);
+        transform: rotate(-15deg);
+      }
+    }
+
+    .name {
+      &-wrapper {
+        position: relative;
+        z-index: 0;
+        transform: translateY(6vh);
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          z-index: -1;
+          background-color: var(--#{$prefix}gray-300);
+          box-shadow: 0 0 1rem rgba(var(--#{$prefix}dark-rgb), 0.2);
+          clip-path: polygon(0 0, 0 0, 0 150%, 0% 150%);
+
+          @include media-breakpoint-up(sm) {
+            width: 100%;
+            height: calc(100% - 2.5rem);
+            top: 1.25rem;
+          }
+          @include media-breakpoint-down(sm) {
+            width: calc(100% + 1rem);
+            height: 100%;
+            top: 0;
+          }
+        }
+      }
+
+      &-info {
+        @include media-breakpoint-up(xxl) {
+          margin: 0 5rem;
+        }
+        @include media-breakpoint-down(xxl) {
+          @include margin-right(3rem);
+        }
+        @include media-breakpoint-between(lg, xxl) {
+          @include margin-left(2rem);
+        }
+        @include media-breakpoint-down(lg) {
+          @include margin-left(3rem);
+        }
+      }
+
+      &-tw {
+        @include media-breakpoint-up(md) {
+          @include font-size($h3-font-size);
+        }
+        @include media-breakpoint-down(md) {
+          @include font-size($h4-font-size);
+        }
+      }
+    }
+  }
+
+  &-right {
+    position: relative;
+    z-index: 0;
+
+    @include media-breakpoint-up(xl) {
+      padding-right: 2.5rem;
+    }
+    @include media-breakpoint-down(xl) {
+      @include padding-right(1.5rem);
+    }
+
+    &-bg {
+      height: calc(100% - 4rem);
+      top: -$header-contact-position-y;
+      right: 0;
+      z-index: -1;
+      background-color: rgba(var(--#{$prefix}primary-rgb), 0.4);
+      clip-path: polygon(0 0, 0 0, 0 150%, 0% 150%);
+
+      @include media-breakpoint-up(xxl) {
+        width: 100%;
+      }
+      @include media-breakpoint-down(xxl) {
+        width: 75%;
+      }
+    }
+
+    .border-end {
+      transform-origin: top;
+      transform: scaleY(0);
+      animation: scroll-line-v 2.5s 1.75s infinite;
+    }
+  }
+
+  &-bg {
+    &-wrapper {
+      width: 100%;
+      height: 100vw;
+      left: 0;
+      z-index: 0;
+      clip-path: polygon(0 -100%, 100% -100%, 100% 60%, 0% 100%);
+
+      @include media-breakpoint-up(lg) {
+        bottom: -54%;
+      }
+      @include media-breakpoint-between(sm, lg) {
+        bottom: -30%;
+      }
+      @include media-breakpoint-down(sm) {
+        bottom: -20%;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: center / cover no-repeat url('../images/index/bg-street.webp');
+    }
+  }
+}
+
+// Skills Section
+.skills {
+  padding-top: 15rem;
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: 4rem;
+  }
+
+  &-title-img {
+    @include media-breakpoint-up(md) {
+      transform: translateY(35%);
+    }
+    @include media-breakpoint-only(sm) {
+      @include margin-bottom(6rem);
+    }
+    @include media-breakpoint-down(sm) {
+      @include margin-bottom(2rem);
+    }
+  }
+
+  &-type {
+    &-en {
+      letter-spacing: 0.3em;
+
+      @include media-breakpoint-down(sm) {
+        text-indent: 0.3em;
+      }
+    }
+
+    &-tw {
+      letter-spacing: 0.5em;
+
+      @include media-breakpoint-down(sm) {
+        text-indent: 0.5em;
+      }
+    }
+  }
+
+  hr {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 150%, 0% 150%);
+
+    &.animated {
+      animation: wipe-in 0.35s var(--wipe-timing-function) 1.2s forwards;
+    }
+  }
+}
+
+// Works
+.works {
+  position: relative;
+  z-index: 1;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 16rem;
+    margin-bottom: -2.5rem;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 6rem 0 4rem;
+    @include margin-bottom(12rem);
+  }
+
+  &-divider {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &-img {
+      width: 200%;
+      top: -4rem;
+      left: 50%;
+      background: transparent #{escape-svg($svg-ladder)} center / contain repeat;
+      opacity: 0.2;
+      transform: translateX(-50%) rotate(-6deg);
+      transform-origin: top right;
+
+      @include media-breakpoint-up(md) {
+        height: 11.5rem;
+      }
+      @include media-breakpoint-down(md) {
+        height: 9.5rem;
+      }
+    }
+  }
+
+  &-title-img {
+    width: auto;
+    height: auto;
+    left: -2rem;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      bottom: 7rem;
+    }
+    @include media-breakpoint-down(md) {
+      bottom: 0;
+    }
+  }
+
+  .font-custom {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -0.25em;
+  }
+
+  .sec-title {
+    .btn-offcanvas {
+      hr {
+        width: 1rem;
+        transition: width 0.15s ease-in-out;
+      }
+
+      &:hover {
+        color: rgb(var(--#{$prefix}white-rgb));
+
+        hr {
+          animation: scroll-line-h 1s infinite;
+        }
+      }
+    }
+  }
+}
+
+// About Section
+.about {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  @include padding-bottom(6rem);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 100%;
+    left: 0;
+    box-shadow: 0 1rem 2.5rem rgba(var(--#{$prefix}dark-rgb), 0.4);
+  }
+
+  &-bg {
+    width: 100%;
+    height: 150vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url('../images/index/bg-street.webp') center / cover no-repeat;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    &::before {
+      @include gradient-x(
+        rgba(var(--#{$prefix}black-rgb), 0.8),
+        rgba(var(--#{$prefix}dark-rgb), 0.5)
+      );
+    }
+
+    &::after {
+      background-image: url(../images/all/bg-texture.webp);
+    }
+  }
+
+  .icon-quote {
+    fill: var(--#{$prefix}dark);
+    margin-bottom: 4rem;
+
+    @include media-breakpoint-up(lg) {
+      width: 17rem;
+    }
+    @include media-breakpoint-down(lg) {
+      width: rfs-fluid-value(20rem);
+    }
+  }
+}
+
+// Footer
+.footer {
+  .scrollToTop {
+    transition: opacity 0.25s ease-in-out;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    path {
+      fill: var(--#{$prefix}light);
+    }
+  }
+}

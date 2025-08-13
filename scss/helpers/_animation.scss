@@ -1,0 +1,122 @@
+.blurIn {
+  opacity: 0;
+  filter: blur(2rem);
+  transition: opacity 1s, filter 0.75s ease-in-out;
+
+  &.animated {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.wipeIn {
+  clip-path: polygon(0% -50%, 0% -50%, 0% 150%, 0% 150%);
+  transition: clip-path 0.75s ease-in-out;
+
+  &.animated {
+    animation: wipe-in 0.75s var(--wipe-timing-function) forwards;
+  }
+}
+
+.scrollAniTxt {
+  span {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: var(--#{$prefix}primary);
+      pointer-events: none;
+    }
+  }
+
+  &.scrollAni span {
+    color: transparent;
+    transition-property: color;
+    transition-delay: 0.725s;
+
+    &::after {
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    }
+  }
+
+  &.animated span {
+    color: inherit;
+
+    &::after {
+      animation: wipe-placeholders 0.75s var(--wipe-timing-function) 0.35s
+        forwards;
+    }
+  }
+}
+
+@keyframes wipe-in {
+  0% {
+    clip-path: polygon(0% -50%, 0% -50%, 0% 150%, 0% 150%);
+  }
+  99% {
+    clip-path: polygon(0% -50%, 110% -50%, 110% 150%, 0% 150%);
+  }
+  100% {
+    clip-path: none;
+  }
+}
+
+@keyframes wipe-placeholders {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  99% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-line-v {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  50% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  51% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes scroll-line-h {
+  0% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  51% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(1);
+  }
+}
