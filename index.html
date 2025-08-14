@@ -18,34 +18,28 @@
       property="og:description"
       content="歡迎您簡要概覽本人的工作技能，以及曾參與開發的網頁系統、客製專案等作品分享。" />
     <meta property="og:url" content="index.html" />
-    <meta property="og:image" content="images/apple-touch-icon.png" />
+    <meta property="og:image" content="src/images/apple-touch-icon.png" />
     <meta property="og:site_name" content="設計作品集" />
 
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="images/all/apple-touch-icon.png" />
+      href="src/images/all/apple-touch-icon.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/all/favicon-32x32.png" />
+      href="src/images/all/favicon-32x32.png" />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="images/all/favicon-16x16.png" />
-    <link rel="manifest" href="images/all/manifest.json" />
+      href="src/images/all/favicon-16x16.png" />
+    <link rel="manifest" href="src/images/all/manifest.json" />
 
     <!-- CSS file -->
-    <link href="css/main.min.css" rel="stylesheet" />
-    <link
-      rel="preload"
-      fetchpriority="high"
-      as="image"
-      href="images/index/bg-street.webp"
-      type="image/webp" />
+    <link href="dist/main.min.css" rel="stylesheet" />
   </head>
   <body>
     <div class="loader position-fixed">
@@ -56,7 +50,7 @@
             width="48"
             height="48"
             class="svg-currentColor me-4">
-            <use href="images/sprite.svg#svg-logo"></use>
+            <use href="src/images/sprite.svg#svg-logo"></use>
           </svg>
           <div class="fs-6">LOADING</div>
         </div>
@@ -79,7 +73,7 @@
                 data-parallax-style="rotate"
                 data-parallax-speed="60">
                 <svg viewBox="0 0 512 512" class="svg-currentColor">
-                  <use href="images/sprite.svg#svg-logo"></use>
+                  <use href="src/images/sprite.svg#svg-logo"></use>
                 </svg>
               </div>
               <div class="name-info align-self-center mt-lg-0 mt-5">
@@ -108,7 +102,7 @@
                   width="28"
                   height="28"
                   class="svg-stroke">
-                  <use href="images/sprite.svg#svg-mail"></use>
+                  <use href="src/images/sprite.svg#svg-mail"></use>
                 </svg>
               </div>
               <div
@@ -119,7 +113,7 @@
                   width="28"
                   height="28"
                   class="svg-stroke">
-                  <use href="images/sprite.svg#svg-phone"></use>
+                  <use href="src/images/sprite.svg#svg-phone"></use>
                 </svg>
               </div>
               <div class="flex-fill border-end border-light my-4"></div>
@@ -128,7 +122,7 @@
                 width="12"
                 height="12"
                 class="svg-stroke">
-                <use href="images/sprite.svg#svg-cross"></use>
+                <use href="src/images/sprite.svg#svg-cross"></use>
               </svg>
             </div>
             <div class="fs-6 fw-light text-end pe-2 my-4">
@@ -164,10 +158,10 @@
               style="display: block; min-height: 1rem">
               <source
                 type="image/webp"
-                srcset="images/index/title-skills.webp" />
+                srcset="src/images/index/title-skills.webp" />
               <img
                 class="img-fluid"
-                src="images/index/title-skills.png"
+                src="src/images/index/title-skills.png"
                 alt="工作能力"
                 width="640"
                 height="150"
@@ -265,10 +259,12 @@
         <picture
           class="works-title-img position-absolute pe-md-0 pe-7 lozad scrollAni blurIn"
           style="display: block; min-height: 1rem">
-          <source type="image/webp" srcset="images/index/title-works.webp" />
+          <source
+            type="image/webp"
+            srcset="src/images/index/title-works.webp" />
           <img
             class="img-fluid"
-            src="images/index/title-works.png"
+            src="src/images/index/title-works.png"
             alt="作品展示"
             width="760"
             height="150"
@@ -331,7 +327,7 @@
               <svg
                 viewBox="0 0 512 376"
                 class="icon-quote svg-currentColor text-dark">
-                <use href="images/sprite.svg#svg-quote"></use>
+                <use href="src/images/sprite.svg#svg-quote"></use>
               </svg>
             </div>
           </div>
@@ -385,7 +381,7 @@
                           viewBox="0 0 24 24"
                           width="32"
                           height="32">
-                          <use href="images/sprite.svg#svg-github"></use>
+                          <use href="src/images/sprite.svg#svg-github"></use>
                         </svg>
                       </a>
                     </dd>
@@ -402,7 +398,7 @@
                     width="40"
                     height="40"
                     class="svg-currentColor">
-                    <use href="images/sprite.svg#svg-logo"></use>
+                    <use href="src/images/sprite.svg#svg-logo"></use>
                   </svg>
                 </a>
               </div>
@@ -411,8 +407,8 @@
         </div>
       </div>
     </footer>
-    <script src="js/jquery.min.js" defer></script>
-    <script src="js/swiper-bundle.min.js" defer></script>
-    <script type="module" src="js/main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="dist/script.js" defer></script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "您好，歡迎簡要概覽本人的工作技能，以及曾參與開發的網頁系統、客製專案等作品分享。\r > Website demo: https://yjo9bbdz.github.io/portfolio/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yjo9bbdz/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yjo9bbdz/portfolio/issues"
+  },
+  "homepage": "https://github.com/yjo9bbdz/portfolio#readme",
+  "dependencies": {
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

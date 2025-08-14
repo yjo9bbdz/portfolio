@@ -1,7 +1,3 @@
-/**
- *相依: Helpers.imgSrc
- */
-
 import { Helpers } from '../utils/helpers.js'
 
 export const Works = {
@@ -18,7 +14,7 @@ export const Works = {
       { num: 17, url: 'https://www.mutunepaltrek.com/' },
       { num: 20, url: 'https://www.pinyibio.com.tw/' },
     ],
-    imgPath: 'images/works/',
+    imgPath: 'src/images/works/',
     imgType: 'jpg',
   },
 

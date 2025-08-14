@@ -54,7 +54,7 @@ body {
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
   letter-spacing: 0.25em;
-  background-image: url(../images/all/bg-texture.webp),
+  background-image: url(../src/images/all/bg-texture.webp),
     linear-gradient(var(--#{$prefix}gray-900), var(--#{$prefix}gray-700));
   background-repeat: repeat;
 

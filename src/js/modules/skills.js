@@ -1,7 +1,3 @@
-/**
- *相依: Helpers.imgSrc
- */
-
 import { Helpers } from '../utils/helpers.js'
 
 export const Skills = {
@@ -34,7 +30,7 @@ export const Skills = {
       let skill = this.data[i]
       let list = skill.list
       let html = id.children().clone()
-      let imgPath = 'images/index/skill-'
+      let imgPath = 'src/images/index/skill-'
       let srcWebp = imgPath + (i + 1) + '.webp'
       let srcPng = imgPath + (i + 1) + '.png'
       Helpers.imgSrc(html, srcWebp, srcPng, '工作能力-' + skill.typeTw)
