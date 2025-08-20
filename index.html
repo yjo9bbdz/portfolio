@@ -38,6 +38,13 @@
       href="src/images/all/favicon-16x16.png" />
     <link rel="manifest" href="src/images/all/manifest.json" />
 
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&Montserrat:wght@300,400,500&display=swap"
+      rel="stylesheet" />
+
     <!-- CSS file -->
     <link href="dist/main.min.css" rel="stylesheet" />
   </head>
@@ -71,7 +78,7 @@
               <div
                 class="logo ms-xl-5 ms-lg-n6 ms-sm-n4 ms-n2 parallax"
                 data-parallax-style="rotate"
-                data-parallax-speed="60">
+                data-parallax-speed="-10">
                 <svg viewBox="0 0 512 512" class="svg-currentColor">
                   <use href="src/images/sprite.svg#svg-logo"></use>
                 </svg>
@@ -134,19 +141,19 @@
             <div
               class="header-right-bg position-absolute parallax"
               data-parallax-style="translateY"
-              data-parallax-speed="6"></div>
+              data-parallax-speed="-60"></div>
           </div>
           <div
             class="header-wrapper-bg position-absolute parallax"
             data-parallax-style="translateY"
-            data-parallax-speed="-8"></div>
+            data-parallax-speed="80"></div>
         </div>
       </div>
       <div class="header-bg-wrapper position-absolute">
         <div
           class="header-bg-img position-fixed parallax"
           data-parallax-style="translateY"
-          data-parallax-speed="8"></div>
+          data-parallax-speed="10"></div>
       </div>
     </header>
     <main class="overflow-hidden">
@@ -174,7 +181,7 @@
             <div id="skillsItem" style="display: none">
               <div class="col-xl-3 col-lg-8 col-10 mb-md-0 mb-sm-7">
                 <div
-                  class="row g-0 flex-xl-column flex-sm-row-reverse justify-content-center align-items-center scrollAni">
+                  class="row g-0 flex-xl-column flex-sm-row-reverse justify-content-center align-items-center">
                   <div class="col-lg-auto col-md col-sm-5 col-8">
                     <picture
                       class="me-xl-0 me-lg-n6 me-sm-n4 lozad"
@@ -184,12 +191,12 @@
                     </picture>
                   </div>
                   <div
-                    class="col-sm col-12 text-sm-start text-center ps-xl-0 ps-md-6">
+                    class="col-sm col-12 text-sm-start text-center ps-xl-0 ps-md-6 scrollAni">
                     <div
-                      class="skills-type-en fs-2 fw-medium mb-1 scrollAni scrollAniTxt"></div>
-                    <div class="skills-type-tw scrollAni scrollAniTxt"></div>
+                      class="skills-type-en fs-2 fw-medium mb-1 scrollAniTxt"></div>
+                    <div class="skills-type-tw scrollAniTxt"></div>
                     <hr
-                      class="border-primary mx-sm-0 mx-auto my-xl-6 my-4 scrollAni"
+                      class="border-primary mx-sm-0 mx-auto my-xl-6 my-4"
                       style="width: 1rem" />
                     <dl class="fs-5"></dl>
                   </div>
@@ -203,7 +210,7 @@
         <div class="row g-0">
           <div class="col-md-4 pe-md-4">
             <div
-              class="d-flex justify-content-md-end justify-content-center align-items-center sec-title scrollAni wipeIn">
+              class="d-flex justify-content-md-end justify-content-center align-items-center sec-title">
               <a
                 class="btn btn-offcanvas border-0 text-end"
                 href="#offcanvasWorks"
@@ -220,7 +227,7 @@
               <div class="swiper-slide">
                 <div class="swiper-container">
                   <div class="swiper-body">
-                    <picture style="display: block" loading="lazy">
+                    <picture style="display: block">
                       <source type="image/webp" srcset="" />
                       <img
                         src=""
@@ -241,7 +248,7 @@
                       </div>
                     </a>
                   </div>
-                  <div class="swiper-placeholder scrollAni"></div>
+                  <div class="swiper-placeholder"></div>
                 </div>
               </div>
             </div>
@@ -253,7 +260,7 @@
         <div
           class="works-divider position-absolute parallax"
           data-parallax-style="translateX"
-          data-parallax-speed="-30">
+          data-parallax-speed="40">
           <div class="works-divider-img position-absolute"></div>
         </div>
         <picture
@@ -276,9 +283,7 @@
               <div class="offcanvas-body p-0 h-100">
                 <div id="worksForItem" style="display: none">
                   <div class="swiper-zoom-container">
-                    <picture
-                      style="display: block; min-height: 1rem"
-                      loading="lazy">
+                    <picture style="display: block; min-height: 1rem">
                       <source type="image/webp" srcset="" />
                       <img class="img-fluid" src="" alt="" loading="lazy" />
                     </picture>
@@ -343,7 +348,7 @@
                 <p
                   class="col fs-5 lh-lg opacity-90"
                   style="text-align: justify">
-                  您好，我是楊逸軒，畢業後就職於幾間數位行銷與商務軟體公司，從業經歷約8、9年，主要負責網頁視覺排版、系統介面設計、前端程式撰寫等工作。熱衷於嘗試用不同的方法來達到目標，從學習到應用的過程，讓我對工作更有成就感。
+                  您好，我是楊逸軒，畢業後皆任職於數位行銷與商務軟體公司，從業經歷約8、9年。主要負責專案流程規劃、系統介面設計、網頁視覺排版及前端程式開發。熱衷於嘗試用不同的方法來達到目標，從學習到應用的過程，讓我對工作更有成就感。
                 </p>
               </div>
             </div>
@@ -352,7 +357,7 @@
         <div
           class="about-bg position-absolute parallax"
           data-parallax-style="translateY"
-          data-parallax-speed="8"></div>
+          data-parallax-speed="100"></div>
       </section>
     </main>
     <footer class="footer text-light bg-primary py-7">
@@ -407,8 +412,12 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
-    <script src="dist/script.js" defer></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script defer src="dist/script.js"></script>
   </body>
 </html>

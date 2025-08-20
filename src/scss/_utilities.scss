@@ -640,14 +640,15 @@ $utilities: map-merge(
     //   class: text,
     //   values: lowercase uppercase capitalize,
     // ),
-    // 'white-space': (
-    //   property: white-space,
-    //   class: text,
-    //   values: (
-    //     wrap: normal,
-    //     nowrap: nowrap,
-    //   ),
-    // ),
+    'white-space':
+      (
+        property: white-space,
+        class: text,
+        values: (
+          wrap: normal,
+          nowrap: nowrap,
+        ),
+      ),
     // 'word-wrap': (
     //   property: word-wrap word-break,
     //   class: text,
@@ -711,7 +712,7 @@ $utilities: map-merge(
           // 50: 0.5,
           60: 0.6,
           // 75: 0.75,
-          // 100: 1,,,,
+          // 100: 1,,,,,
         ),
       ),
     // 'link-offset': (

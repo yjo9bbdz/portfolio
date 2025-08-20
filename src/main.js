@@ -1,10 +1,10 @@
-import { Helpers } from './js/utils/helpers'
-import { Header } from './js/modules/header'
-import { Skills } from './js/modules/skills'
-import { Works } from './js/modules/works'
-import { Loader } from './js/modules/loader'
-import { ScrollAni } from './js/modules/scroll-ani'
-import { Parallax } from './js/modules/parallax'
+import { Helpers } from './js/utils/helpers.js'
+import { Header } from './js/modules/header.js'
+import { Skills } from './js/modules/skills.js'
+import { Works } from './js/modules/works.js'
+import { Loader } from './js/modules/loader.js'
+import { ScrollAni } from './js/modules/scroll-ani.js'
+import { Parallax } from './js/modules/parallax.js'
 
 $(function () {
   Header.init()

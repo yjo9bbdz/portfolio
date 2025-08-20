@@ -21,6 +21,9 @@
 .scrollAniTxt {
   span {
     position: relative;
+    color: transparent;
+    transition-property: color;
+    transition-delay: 0.725s;
 
     &::after {
       content: '';
@@ -32,20 +35,11 @@
       left: 0;
       background-color: var(--#{$prefix}primary);
       pointer-events: none;
-    }
-  }
-
-  &.scrollAni span {
-    color: transparent;
-    transition-property: color;
-    transition-delay: 0.725s;
-
-    &::after {
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
     }
   }
 
-  &.animated span {
+  .animated & span {
     color: inherit;
 
     &::after {

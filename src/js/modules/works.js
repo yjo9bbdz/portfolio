@@ -76,6 +76,7 @@ export const Works = {
     this.secSwiper = new Swiper('.worksSecSwiper', {
       slidesPerView: 'auto',
       centeredSlides: true,
+      initialSlide: 0,
       mousewheel: true,
       loop: true,
       lazy: true,
@@ -86,9 +87,16 @@ export const Works = {
       },
       on: {
         init: function () {
+          const swiper = this
+          swiper.slideToLoop(0, 0)
           $('.worksSecSwiper .swiper-slide-active .btn-offcanvas').addClass(
             'active'
           )
+        },
+        afterInit: function () {
+          setTimeout(() => {
+            $('.worksSecSwiper').addClass('scrollAni')
+          }, 100)
         },
         slideChangeTransitionStart: function () {
           $('.worksSecSwiper').removeClass('scrollAni animated')
@@ -104,7 +112,6 @@ export const Works = {
         },
       },
     })
-    this.secSwiper.init()
   },
 
   initForSwiper() {

@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open",
     "build": "webpack"
   },
   "repository": {
@@ -19,7 +18,6 @@
   },
   "homepage": "https://github.com/yjo9bbdz/portfolio#readme",
   "dependencies": {
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-cli": "^6.0.1"
   }
 }

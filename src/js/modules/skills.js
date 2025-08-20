@@ -37,9 +37,7 @@ export const Skills = {
       html.find('.skills-type-en').text(skill.typeEn)
       html.find('.skills-type-tw').text(skill.typeTw)
       for (let d = 0; d < list.length; d++) {
-        html
-          .find('dl')
-          .append('<dd class="scrollAni scrollAniTxt">' + list[d] + '</dd>')
+        html.find('dl').append('<dd class="scrollAniTxt">' + list[d] + '</dd>')
       }
       let $item = html.prop('outerHTML')
       items.push($item)

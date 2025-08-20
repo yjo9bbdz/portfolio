@@ -154,14 +154,14 @@
       width: 100%;
       left: 0;
       z-index: 0;
+      opacity: 0;
+      transition: opacity 0.15s,
+        background-color 0.2s var(--wipe-timing-function);
+      pointer-events: none;
 
       @include media-breakpoint-up(md) {
         bottom: rfs-fluid-value(5rem);
         background-color: transparent;
-        opacity: 0;
-        transition: opacity 0.15s,
-          background-color 0.2s var(--wipe-timing-function);
-        pointer-events: none;
 
         &::after,
         > div::after {
@@ -189,20 +189,20 @@
         }
 
         &.active {
-          opacity: 1;
-          pointer-events: initial;
-
-          @include media-breakpoint-up(md) {
-            &:hover::after,
-            > div::after {
-              transform: scaleX(1);
-              transform-origin: right;
-            }
+          &:hover::after,
+          > div::after {
+            transform: scaleX(1);
+            transform-origin: right;
           }
         }
       }
       @include media-breakpoint-down(md) {
         bottom: -3rem;
+      }
+
+      &.active {
+        opacity: 1;
+        pointer-events: initial;
       }
 
       span {

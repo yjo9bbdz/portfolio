@@ -10,17 +10,13 @@ export const Header = {
     let windowRatioW = windowW * 0.75
     let headerRealH = $('.header-wrapper').outerHeight()
     let headerVisitH
-    let headerPadding = $('.header')
-      .css('--header-contact-over-height')
-      .replace('rem', '')
+    let headerPadding = $('.header').css('--header-contact-over-height')
 
     $('.header').css('--header-height', headerRealH + 'px')
 
-    if (windowW >= 992 && windowH <= windowRatioW) {
-      headerPadding = headerPadding + 'rem'
+    if (windowH <= windowRatioW) {
       headerVisitH = headerRealH + 160
     } else {
-      headerPadding = headerPadding / 2 + 'rem'
       headerVisitH = headerRealH + 80
     }
 

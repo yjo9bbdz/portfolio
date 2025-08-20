@@ -132,7 +132,7 @@ h2.fs-3 {
       }
 
       svg {
-        transform: rotate(-15deg);
+        transform: rotate(-20deg);
       }
     }
 
@@ -276,6 +276,8 @@ h2.fs-3 {
 
   &-type {
     &-en {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       letter-spacing: 0.3em;
 
       @include media-breakpoint-down(sm) {
@@ -294,10 +296,10 @@ h2.fs-3 {
 
   hr {
     clip-path: polygon(0% 0%, 0% 0%, 0% 150%, 0% 150%);
+  }
 
-    &.animated {
-      animation: wipe-in 0.35s var(--wipe-timing-function) 1.2s forwards;
-    }
+  .animated hr {
+    animation: wipe-in 0.35s var(--wipe-timing-function) 1.2s forwards;
   }
 }
 
@@ -378,7 +380,7 @@ h2.fs-3 {
     right: -2px;
     z-index: 1;
     transform: translateX(100%);
-    transition: transform 0.25s var(--wipe-timing-function) 0.25s;
+    transition: transform 0.35s var(--wipe-timing-function);
     pointer-events: none;
 
     &::before,
@@ -395,24 +397,29 @@ h2.fs-3 {
     }
 
     &::before {
-      background-color: var(--#{$prefix}dark);
+      background-color: var(--#{$prefix}primary);
     }
 
     &::after {
-      background-color: var(--#{$prefix}primary);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.35s var(--wipe-timing-function);
-    }
-
-    &:hover::after {
+      background-color: var(--#{$prefix}dark);
       transform: scaleX(1);
       transform-origin: right;
+      transition: transform 0.35s var(--wipe-timing-function);
     }
 
     &.show {
       transform: translateX(0);
       pointer-events: initial;
+      transition-delay: 0.35s;
+
+      &::after {
+        animation: scroll-line-h 1.05s var(--wipe-timing-function);
+      }
+    }
+
+    &:hover::after {
+      transform: scaleX(0);
+      transform-origin: left;
     }
   }
 }
