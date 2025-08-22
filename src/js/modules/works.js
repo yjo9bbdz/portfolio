@@ -106,9 +106,8 @@ export const Works = {
           setTimeout(function () {
             $('.worksSecSwiper .swiper-slide-active .btn-offcanvas').addClass(
               'active'
-            ),
-              300
-          })
+            )
+          }, 300)
         },
       },
     })
@@ -152,6 +151,14 @@ export const Works = {
           } else {
             $('.works-linkto').removeClass('show')
           }
+        },
+        slideChangeTransitionStart: function () {
+          $('.swiper-lazy-preloader-custom').hide()
+        },
+        slideChangeTransitionEnd: function () {
+          setTimeout(function () {
+            $('.swiper-lazy-preloader-custom').fadeIn(150)
+          }, 150)
         },
       },
     })
