@@ -27,8 +27,7 @@ h2.fs-3 {
   z-index: 10;
   letter-spacing: 0.75em;
   color: rgba(var(--#{$prefix}light-rgb), 0.6);
-  background: url(../src/images/all/bg-texture.webp) repeat
-    var(--#{$prefix}body-bg);
+  background: url(../images/all/bg-texture.webp) repeat var(--#{$prefix}body-bg);
   @include padding-left(4rem);
   @include padding-bottom(4rem);
   transition: transform 0.375s var(--wipe-timing-function);
@@ -81,7 +80,7 @@ h2.fs-3 {
       left: 0;
       z-index: -1;
       background: center / cover no-repeat $black
-        url('../src/images/index/bg-banner.webp');
+        url('../images/index/bg-banner.webp');
     }
   }
 
@@ -248,8 +247,7 @@ h2.fs-3 {
       height: 100%;
       top: 0;
       left: 0;
-      background: center / cover no-repeat
-        url('../src/images/index/bg-street.webp');
+      background: center / cover no-repeat url('../images/index/bg-street.webp');
     }
   }
 }
@@ -444,12 +442,11 @@ h2.fs-3 {
 
   &-bg {
     width: 100%;
-    height: 150vh;
+    height: 150%;
     top: 0;
     left: 0;
     z-index: -1;
-    background: url('../src/images/index/bg-street.webp') center / cover
-      no-repeat;
+    background: url('../images/index/bg-street.webp') center / cover no-repeat;
 
     &::before,
     &::after {
@@ -470,7 +467,7 @@ h2.fs-3 {
     }
 
     &::after {
-      background-image: url(../src/images/all/bg-texture.webp);
+      background-image: url(../images/all/bg-texture.webp);
     }
   }
 

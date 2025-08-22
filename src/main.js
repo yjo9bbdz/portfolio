@@ -1,3 +1,4 @@
+import './main.min.css'
 import { Helpers } from './js/utils/helpers.js'
 import { Header } from './js/modules/header.js'
 import { Skills } from './js/modules/skills.js'

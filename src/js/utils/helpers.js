@@ -1,7 +1,8 @@
 export const Helpers = {
   imgSrc(item, webp, type, alt) {
-    item.find('picture source').attr('srcset', webp)
-    item.find('picture img').attr('src', type)
+    let imgRoot = 'images/'
+    item.find('picture source').attr('srcset', imgRoot + webp)
+    item.find('picture img').attr('src', imgRoot + type)
 
     if (alt) {
       item.find('picture img').attr('alt', alt)

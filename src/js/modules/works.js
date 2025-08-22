@@ -14,7 +14,7 @@ export const Works = {
       { num: 17, url: 'https://www.mutunepaltrek.com/' },
       { num: 20, url: 'https://www.pinyibio.com.tw/' },
     ],
-    imgPath: 'src/images/works/',
+    imgPath: 'works/',
     imgType: 'jpg',
   },
 
