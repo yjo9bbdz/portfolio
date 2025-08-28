@@ -1,5 +1,4 @@
 import './main.min.css'
-import { Helpers } from './js/utils/helpers.js'
 import { Header } from './js/modules/header.js'
 import { Skills } from './js/modules/skills.js'
 import { Works } from './js/modules/works.js'
@@ -18,4 +17,4 @@ $(function () {
   Parallax.init()
 })
 
-$('.scrollToTop').click(Helpers.scrollToTop)
+$('.scrollToTop').click($('html,body').animate({ scrollTop: 0 }, 500))

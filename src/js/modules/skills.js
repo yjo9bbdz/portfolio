@@ -1,4 +1,4 @@
-import { Helpers } from '../utils/helpers.js'
+import { ImgSrc } from '../utils/helpers.js'
 
 export const Skills = {
   data: [
@@ -26,22 +26,21 @@ export const Skills = {
   load() {
     let id = $('#skillsItem')
     let items = []
-    for (let i = 0; i < this.data.length; i++) {
-      let skill = this.data[i]
-      let list = skill.list
+    this.data.forEach((item, i) => {
+      let list = item.list
       let html = id.children().clone()
       let imgPath = 'index/skill-'
       let srcWebp = imgPath + (i + 1) + '.webp'
       let srcPng = imgPath + (i + 1) + '.png'
-      Helpers.imgSrc(html, srcWebp, srcPng, '工作能力-' + skill.typeTw)
-      html.find('.skills-type-en').text(skill.typeEn)
-      html.find('.skills-type-tw').text(skill.typeTw)
-      for (let d = 0; d < list.length; d++) {
-        html.find('dl').append('<dd class="scrollAniTxt">' + list[d] + '</dd>')
-      }
-      let $item = html.prop('outerHTML')
-      items.push($item)
-    }
+      ImgSrc(html, srcWebp, srcPng, '工作能力-' + item.typeTw)
+      html.find('.skills-type-en').text(item.typeEn)
+      html.find('.skills-type-tw').text(item.typeTw)
+      list.forEach((dd) => {
+        html.find('dl').append(`<dd class="scrollAniTxt">${dd}</dd>`)
+      })
+      let itemHtml = html.prop('outerHTML')
+      items.push(itemHtml)
+    })
     id.parents('.skillsRow').empty().append(items)
     id.remove()
   },

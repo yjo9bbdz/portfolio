@@ -6,13 +6,14 @@ export const Parallax = {
   run() {
     const $parallax = $('.parallax')
     const windowHeight = $(window).height()
+
     $parallax.each(function () {
       const el = $(this)
       const style = el.data('parallax-style') || 'translateY'
       const speed = parseFloat(el.data('parallax-speed')) || 50
       const isFixed = el.css('position') === 'fixed'
-
       let num
+
       if (isFixed) {
         num = -($(window).scrollTop() / speed)
       } else {

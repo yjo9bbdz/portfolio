@@ -1,4 +1,4 @@
-import { Helpers } from '../utils/helpers.js'
+import { ImgSrc } from '../utils/helpers.js'
 
 export const Works = {
   data: {
@@ -47,7 +47,7 @@ export const Works = {
         $btn.addClass('active')
       }
 
-      Helpers.imgSrc(html, srcWebp, srcJpg)
+      ImgSrc(html, srcWebp, srcJpg)
 
       let $item = html.prop('outerHTML')
       items.push($item)
@@ -77,7 +77,15 @@ export const Works = {
       slidesPerView: 'auto',
       centeredSlides: true,
       initialSlide: 0,
-      mousewheel: true,
+      mousewheel: {
+        enabled: true,
+        sensitivity: 1,
+        thresholdDelta: 50,
+        thresholdTime: 500,
+      },
+      touchEventsTarget: 'wrapper',
+      touchMoveStopPropagation: false,
+      simulateTouch: false,
       loop: true,
       lazy: true,
       breakpoints: {
@@ -128,7 +136,7 @@ export const Works = {
             let html = $('#worksForItem').children().clone()
             let srcWebp = $this.data.imgPath + i + '.webp'
             let srcJpg = $this.data.imgPath + i + '.' + $this.data.imgType
-            Helpers.imgSrc(html, srcWebp, srcJpg)
+            ImgSrc(html, srcWebp, srcJpg)
 
             slides.push(html.prop('outerHTML'))
           }
