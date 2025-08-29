@@ -1,10 +1,11 @@
 export const Loader = {
   isVisible: true,
   hideTime: 400,
-  hideTimeout: null,
   onLoadCompleteCallbacks: [],
 
-  hideLoader: function () {
+  hide: function () {
+    if (!this.isVisible) return
+
     $('.loader').addClass('is-hidden')
 
     setTimeout(() => {
@@ -16,31 +17,8 @@ export const Loader = {
         callback()
       }
     })
-  },
 
-  show: function () {
-    $('.loader').removeClass('is-hidden')
-    this.isVisible = true
-  },
-
-  hide: function (delay) {
-    if (!this.isVisible) return
-
-    const hideDelay = delay || 0
-    const self = this
-
-    if (this.hideTimeout) {
-      clearTimeout(this.hideTimeout)
-    }
-
-    this.hideTimeout = setTimeout(function () {
-      self.hideLoader()
-      self.isVisible = false
-    }, hideDelay)
-  },
-
-  getVisibleStatus: function () {
-    return this.isVisible
+    this.isVisible = false
   },
 
   onLoadComplete: function (callback) {
@@ -50,10 +28,8 @@ export const Loader = {
   },
 
   init: function () {
-    const self = this
-
-    const hideLoader = function () {
-      self.hide(this.hideTime)
+    const hideLoader = () => {
+      this.hide(this.hideTime)
     }
 
     $(window).on('load', function () {

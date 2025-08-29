@@ -10,11 +10,13 @@ $(function () {
   Header.init()
   Skills.init()
   Works.init()
-  Loader.onLoadComplete(function () {
+  Loader.onLoadComplete(() => {
     ScrollAni.init()
   })
   Loader.init()
   Parallax.init()
 })
 
-$('.scrollToTop').click($('html,body').animate({ scrollTop: 0 }, 500))
+$('.scrollToTop').click(() => {
+  $('html,body').animate({ scrollTop: 0 }, 500)
+})
